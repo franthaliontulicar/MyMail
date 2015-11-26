@@ -21,14 +21,14 @@ public class MailItem
 
     }
 
-    public String getOrigen(){
+    public String getFrom(){
         return from;
     } 
     
-    public String getDestino(){
+    public String getTo(){
         return to;
     }
-    public String getMensaje(){
+    public String getMessage(){
         return message;
     }
     

@@ -11,38 +11,32 @@ public class MailClient
     private MailServer server;
     private String user;
     public MailClient(MailServer server, String nombreUsuario){
-    
-    user = nombreUsuario;
-    server = server;
-    
+
+        user = nombreUsuario;
+        server = server;
+
     }
-    
+
     public MailItem getNextMailItem(){
-    
-    MailItem correoRecuperado = Integer.toString(correoRecuperado);
-    correoRecuperado = user;
-    return correoRecuperado;
-    
+
+        return server.getNextMailItem(user);
+
     }
-    
+
     public void printNextMailItem(){
-        MailItem correoRecuperado = Integer.toString(correoRecuperado);
-        if(correoRecuperado == user){
-        System.out.println("El usuario "+ user + "tiene elmensaje "+ correoRecuperado);        
-        } else {
-        System.out.println("Lo sentimos, su mensaje no ha sido localizado");  
+        MailItem mensaje = getNextMailItem();
+        if(mensaje != null){
+            mensaje.print();
+        }
+        else{
+            System.out.println("No tiene mensajes");
         }
         
+    }
+    public void sendMailItem(String to, String mensajeEnviado){
+      MailItem mensaje = new MailItem(user,to,mensajeEnviado);
+      server.post(mensaje);
     
     }
-    
-    public void sendMailItem(String destinatario, String mensaje){
-        destiantario = "";
-        mensaje = "";
-        MailItem email;
-        String correo = Integer.toString(email);
-        correo = " El mensaje " + mensaje + " es para " + destinatario;
-        
-    }
-    
 }
+
