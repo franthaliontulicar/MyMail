@@ -13,11 +13,14 @@ public class MailItem
     private String to;
 
     private String message;
+    
+    private String subject;
 
-    public MailItem(String from, String to, String message){
+    public MailItem(String from, String to, String message, String subject){
         this.from = from;
         this.to = to;
-        this.message = message;    
+        this.message = message;
+        this.subject = subject;
 
     }
 
@@ -32,9 +35,14 @@ public class MailItem
         return message;
     }
     
+    public String getSubject(){
+        return subject;
+    }
+    
     public void print(){
         System.out.println("De: " + from); 
         System.out.println("Para: " + to );
         System.out.println("Mensaje: " + message );
+        System.out.println("Asunto: " + subject);
     }
 }

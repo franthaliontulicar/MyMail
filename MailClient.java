@@ -34,8 +34,8 @@ public class MailClient
         }
         
     }
-    public void sendMailItem(String to, String mensajeEnviado){
-      MailItem mensaje = new MailItem(user,to,mensajeEnviado);
+    public void sendMailItem(String to, String mensajeEnviado, String asunto){
+      MailItem mensaje = new MailItem(user,to,mensajeEnviado,asunto);
       server.post(mensaje);
     
     }
