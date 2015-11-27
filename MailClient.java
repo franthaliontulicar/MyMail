@@ -40,8 +40,18 @@ public class MailClient
         MailItem mensaje = new MailItem(user,to,mensajeEnviado,asunto);
         server.howManyMailItems(user);
         server.post(mensaje);
-         
+        
 
+    }
+    
+    public void getNextMailItemAndAutorespond(String to, String mensajeEnviado, String asunto){
+        MailItem mensaje = new MailItem(user,to,mensajeEnviado,asunto);
+        server.getNextMailItem(user);
+        server.post(mensaje);
+        mensaje.print();
+        System.out.println("Re " + asunto + " Sentimos no poder atenderle, estamos de vacaciones ");
+       
+      
     }
 }
 
