@@ -10,6 +10,7 @@ public class MailClient
     // instance variables - replace the example below with your own
     private MailServer server;
     private String user;
+    
     public MailClient(MailServer server, String user){
 
         this.server = server;
@@ -21,23 +22,26 @@ public class MailClient
 
         return server.getNextMailItem(user);
 
-        
     }
-
     public void printNextMailItem(){
         MailItem mensaje = getNextMailItem();
+       
         if(mensaje != null){
             mensaje.print();
+           
         }
         else{
             System.out.println("No tiene mensajes");
         }
-        
+
     }
+
     public void sendMailItem(String to, String mensajeEnviado, String asunto){
-      MailItem mensaje = new MailItem(user,to,mensajeEnviado,asunto);
-      server.post(mensaje);
-    
+        MailItem mensaje = new MailItem(user,to,mensajeEnviado,asunto);
+        server.howManyMailItems(user);
+        server.post(mensaje);
+         
+
     }
 }
 
