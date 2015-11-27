@@ -14,10 +14,10 @@ public class MailItem
 
     private String message;
 
-    public MailItem(String origen, String destinatario, String contenido){
-        from = origen;
-        to = destinatario;
-        message = contenido;    
+    public MailItem(String from, String to, String message){
+        this.from = from;
+        this.to = to;
+        this.message = message;    
 
     }
 

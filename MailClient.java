@@ -10,10 +10,10 @@ public class MailClient
     // instance variables - replace the example below with your own
     private MailServer server;
     private String user;
-    public MailClient(MailServer server, String nombreUsuario){
+    public MailClient(MailServer server, String user){
 
-        user = nombreUsuario;
-        server = server;
+        this.server = server;
+        this.user = user;
 
     }
 
@@ -21,6 +21,7 @@ public class MailClient
 
         return server.getNextMailItem(user);
 
+        
     }
 
     public void printNextMailItem(){
